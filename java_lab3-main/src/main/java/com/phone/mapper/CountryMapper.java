@@ -20,7 +20,9 @@ public class CountryMapper {
 
     public CountryDtoResponse toDto(Country entity) {
         CountryDtoResponse dto = new CountryDtoResponse();
-        
+        dto.setCode(entity.getCode());
+        dto.setName(entity.getName());
+        dto.setPhoneCode(entity.getPhoneCode());
 
         List<PrefixDtoResponse> prefixDtos = entity.getPrefixes() != null
                 ? entity.getPrefixes().stream()
