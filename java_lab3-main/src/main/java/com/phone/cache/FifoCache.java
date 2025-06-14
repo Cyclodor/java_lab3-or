@@ -16,9 +16,7 @@ public abstract class FifoCache<T> {
             @Override
             protected boolean removeEldestEntry(Map.Entry<Long, T> eldest) {
                 boolean shouldRemove = size() > FifoCache.this.capacity;
-                if (shouldRemove) {
-                    log.info("FIFO Cache: Evicted oldest item. ID: {}", eldest.getKey());
-                }
+                
                 return shouldRemove;
             }
         };
